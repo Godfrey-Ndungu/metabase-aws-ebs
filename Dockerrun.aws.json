@@ -1,0 +1,40 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+      "Name": "metabase/metabase:v0.47.2",
+      "Update": "true"
+    },
+    "Ports": [
+      {
+        "ContainerPort": "3000"
+      }
+    ],
+    "Environment": [
+      {
+        "Name": "MB_DB_TYPE",
+        "Value": "postgres"
+      },
+      {
+        "Name": "MB_DB_DBNAME",
+        "Value": "${DB_NAME}"
+      },
+      {
+        "Name": "MB_DB_HOST",
+        "Value": "${DB_HOST}"
+      },
+      {
+        "Name": "MB_DB_USER",
+        "Value": "${DB_USER}"
+      },
+      {
+        "Name": "MB_DB_PASS",
+        "Value": "${DB_PASSWORD}"
+      },
+      {
+        "Name": "MB_DB_PORT",
+        "Value": "${DB_PORT}"
+      }
+    ],
+     "Logging" : "/var/log/metabase"
+  }
+  
